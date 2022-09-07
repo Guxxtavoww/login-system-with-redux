@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "src/server.ts",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "sucrase": "^3.25.0",
+    "typescript": "^4.8.2"
+  },
+  "scripts": {
+    "start": "sucrase-node src/server.ts",
+    "dev": "sucrase-nodemon src/server.ts"
+  }
+}
