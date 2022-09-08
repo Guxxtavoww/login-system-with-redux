@@ -2,8 +2,8 @@
 
 ### Quais scripts você deve rodar a partir do momento da clonagem:
 
-- /client -> yarn
-- /server -> yarn
+- /client -> **yarn**
+- /server -> **yarn**
 
 
 ## No __/client__ é necessário um .env com a url da api express
