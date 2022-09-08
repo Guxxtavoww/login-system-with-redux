@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import './ConfirmPopup.scss';
 
 interface IConfirmPopupProps {
-  title: string;
-  description?: string;
-  onClick: () => void;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+	title: string;
+	description?: string;
+	onClick: () => void;
+	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ConfirmPopup: React.FC<IConfirmPopupProps> = ({
@@ -23,8 +23,17 @@ const ConfirmPopup: React.FC<IConfirmPopupProps> = ({
 			exit={{ opacity: 0, scale: 0 }}
 			className="popup-container app_flex"
 		>
-			<div className="popup">
-				<h2>{title}</h2>
+			<div className="popup_wrapper">
+				<div className="popup">
+					<div className="popup-content_box">
+						<h2>{title}</h2>
+						<p>{description}</p>
+					</div>
+					<div className="btnBx">
+						<button onClick={() => setOpen(false)}>Cancelar</button>
+						<button onClick={onClick}>Confirmar</button>
+					</div>
+				</div>
 			</div>
 		</motion.div>
 	);
