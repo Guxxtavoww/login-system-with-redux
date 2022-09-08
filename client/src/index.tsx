@@ -8,13 +8,13 @@ import './styles/reset.css';
 import store from './redux/store';
 
 const root = ReactDOM.createRoot(
-	document.querySelector('div#root') as HTMLElement,
+  document.querySelector('div#root') as HTMLElement,
 );
 
 root.render(
-	<Provider store={store}>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	</Provider>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
 );

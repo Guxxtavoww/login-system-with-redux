@@ -3,50 +3,50 @@
 *,
 *::before,
 *::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	text-decoration: none;
-	list-style: none;
-	outline: 0;
-	border: none;
-	font-family: 'Poppins', sans-serif;
-	scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: 0;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
 html {
-	overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 body {
-	position: relative;
-	min-width: 100vw;
-	min-height: 100vh;
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 img {
-	display: block;
-	max-width: 100%;
-	object-fit: cover;
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 button {
-	cursor: pointer;
-	background-color: transparent;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 a {
-	color: inherit;
+  color: inherit;
 }
 
 .app {
-	position: relative;
-	width: 100%;
-	min-height: 100vh;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .app_flex {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
