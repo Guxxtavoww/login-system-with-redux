@@ -23,6 +23,7 @@ const ConfirmPopup: React.FC<IConfirmPopupProps> = ({
 			exit={{ opacity: 0, scale: 0 }}
 			className="popup-container app_flex"
 		>
+			<button onClick={() => setOpen(false)} className="closeBtn">&times;</button>
 			<div className="popup_wrapper">
 				<div className="popup">
 					<div className="popup-content_box">

@@ -1,7 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import './Login.scss';
+import { IUserLogin } from '../../types/user';
+import { RootState } from '../../redux/store';
+import { UserLogin } from '../../redux/userApiCall';
 
 const Login: React.FC = () => {
-	return <div></div>;
+	const dispatch = useDispatch();
+	const { error, isFetching } = useSelector((state: RootState) => state.user_redux);
+
+	const [ formData, setFormData ] = useState({} as IUserLogin);
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const { name, value } = e.target;
+
+		setFormData({ ...formData, [name]: value });
+	};
+
+	const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
+		e.preventDefault();
+
+		await UserLogin(dispatch, formData);
+	};
+
+	return (
+		<div className="loginWrapper">
+			<form onSubmit={handleSubmit}>
+				<div className="inputBx">
+					<label htmlFor="email">Email</label>
+					<input type="email" placeholder="Seu E-mail" name="email" id="email" onChange={handleChange} />
+				</div>
+				<div className="inputBx">
+					<label htmlFor="password">Senha</label>
+					<input type="password" placeholder="Sua Senha" name="password" id="password" onChange={handleChange} />
+				</div>
+				<button type="submit" disabled={isFetching}>Logar</button>
+				{error && <span>{error}</span>}
+			</form>
+		</div>
+	);
 };
 
 export default Login;

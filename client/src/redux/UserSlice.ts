@@ -31,4 +31,4 @@ const UserSlice = createSlice({
 
 export default UserSlice.reducer;
 export const { loginError, loginStart, loginSuccess, logOut } =
-  UserSlice.actions;
+	UserSlice.actions;

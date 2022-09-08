@@ -6,4 +6,5 @@ module.exports = {
   semi: true,
   endOfLine: 'auto',
   useTabs: true,
+  tabWidth: 2,
 };
