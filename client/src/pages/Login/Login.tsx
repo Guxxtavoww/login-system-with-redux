@@ -8,9 +8,11 @@ import { UserLogin } from '../../redux/userApiCall';
 
 const Login: React.FC = () => {
 	const dispatch = useDispatch();
-	const { error, isFetching } = useSelector((state: RootState) => state.user_redux);
+	const { error, isFetching } = useSelector(
+		(state: RootState) => state.user_redux,
+	);
 
-	const [ formData, setFormData ] = useState({} as IUserLogin);
+	const [formData, setFormData] = useState({} as IUserLogin);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
@@ -29,13 +31,27 @@ const Login: React.FC = () => {
 			<form onSubmit={handleSubmit}>
 				<div className="inputBx">
 					<label htmlFor="email">Email</label>
-					<input type="email" placeholder="Seu E-mail" name="email" id="email" onChange={handleChange} />
+					<input
+						type="email"
+						placeholder="Seu E-mail"
+						name="email"
+						id="email"
+						onChange={handleChange}
+					/>
 				</div>
 				<div className="inputBx">
 					<label htmlFor="password">Senha</label>
-					<input type="password" placeholder="Sua Senha" name="password" id="password" onChange={handleChange} />
+					<input
+						type="password"
+						placeholder="Sua Senha"
+						name="password"
+						id="password"
+						onChange={handleChange}
+					/>
 				</div>
-				<button type="submit" disabled={isFetching}>Logar</button>
+				<button type="submit" disabled={isFetching}>
+					Logar
+				</button>
 				{error && <span>{error}</span>}
 			</form>
 		</div>

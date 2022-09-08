@@ -1,37 +1,37 @@
 .navbarBox {
-    width: 100%;
-    height: 65px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #f0f0f0;
-    color: #0d0d0d;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: space-between;
-    padding: 0 2rem;
+	width: 100%;
+	height: 65px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #f0f0f0;
+	color: #0d0d0d;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	justify-content: space-between;
+	padding: 0 2rem;
 
-    .logo {
-        font-size: 1.4em;
-        font-weight: 500;
-        letter-spacing: 3px;
-    }
+	.logo {
+		font-size: 1.4em;
+		font-weight: 500;
+		letter-spacing: 3px;
+	}
 
-    .profileBox {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-    }
+	.profileBox {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		img {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+		}
+	}
 
-    .menu {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
+	.menu {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
 }
