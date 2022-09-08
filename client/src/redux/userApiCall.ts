@@ -1,16 +1,28 @@
 import { AppDispatch } from "./store";
 import { publicRequest } from "../api";
-import { IUserLogin } from "../types/user";
+import { IUserLogin, IUserRegister } from "../types/user";
 import { loginError, loginStart, loginSuccess } from "./UserSlice";
 
-export const Login = async (dispatch: AppDispatch, user: IUserLogin) => {
-    dispatch(loginStart());
+export const Login = async (dipatch: AppDispatch, user: IUserLogin) => {
+    dipatch(loginStart());
 
     publicRequest.post("/auth/login", user)
     .then(({ data }) => {
-        dispatch(loginSuccess(data));
+        dipatch(loginSuccess(data));
     })
     .catch(err => {
-        dispatch(loginError(String(err.message)));
+        dipatch(loginError(String(err.message)));
+    });
+}
+
+export const RegisterAndLogin = async (dipatch: AppDispatch, user: IUserRegister) => {
+    dipatch(loginStart());
+
+    publicRequest.post("/auth/register", user)
+    .then(({ data }) => {
+        dipatch(loginSuccess(data));
+    })
+    .catch((err) => {
+        dipatch(loginError(String(err.message)));
     });
 }

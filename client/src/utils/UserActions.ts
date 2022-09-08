@@ -4,7 +4,7 @@ import { logOut } from "../redux/UserSlice";
 import { AppDispatch } from "../redux/store"
 
 export const Logout = () => {
-    const dispatch: AppDispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
 
     dispatch(logOut());
 }
