@@ -19,6 +19,18 @@ html {
 }
 
 body {
+    position: relative;
     min-width: 100vw;
     min-height: 100vh;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+button {
+    cursor: pointer;
+    background-color: none;
 }

@@ -15,7 +15,7 @@ export const Login = async (dipatch: AppDispatch, user: IUserLogin) => {
     });
 }
 
-export const RegisterAndLogin = async (dipatch: AppDispatch, user: IUserRegister) => {
+export const UserRegisterAndLogin = async (dipatch: AppDispatch, user: IUserRegister) => {
     dipatch(loginStart());
 
     publicRequest.post("/auth/register", user)
