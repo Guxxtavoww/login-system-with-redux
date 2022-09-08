@@ -5,7 +5,7 @@ import './ConfirmPopup.scss';
 
 interface IConfirmPopupProps {
 	title: string;
-	description?: string;
+	description: string;
 	onClick: () => void;
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
