@@ -1,36 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    outline: 0;
-    border: none;
-    font-family: 'Urbanist', sans-serif;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: 0;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
 html {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 body {
-    position: relative;
-    min-width: 100vw;
-    min-height: 100vh;
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    object-fit: cover;
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 button {
-    cursor: pointer;
-    background-color: none;
+  cursor: pointer;
+  background-color: none;
+}
+
+.app_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
