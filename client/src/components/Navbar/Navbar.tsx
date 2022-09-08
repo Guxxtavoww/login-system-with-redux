@@ -39,7 +39,14 @@ const Navbar: React.FC = () => {
 					</div>
 				)}
 			</nav>
-			{modalVisible && <ConfirmPopup title="Janela de Confirmaçao" onClick={handleLogOut} setOpen={setModalVisible} description="Deseja confirmar essa ação ?" />}
+			{modalVisible && (
+				<ConfirmPopup
+					title="Janela de Confirmaçao"
+					onClick={handleLogOut}
+					setOpen={setModalVisible}
+					description="Deseja confirmar essa ação ?"
+				/>
+			)}
 		</>
 	);
 };
