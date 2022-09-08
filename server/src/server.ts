@@ -1,12 +1,9 @@
 import express from "express";
-import { config } from "dotenv";
-
-config();
 
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send("Oi");
+    res.send("Foi");
 });
 
-app.listen(5000, () => console.log('Rodando'));
+app.listen(5000, () => console.log("Rodando"));

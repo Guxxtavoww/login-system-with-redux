@@ -3,7 +3,7 @@ import { publicRequest } from "../api";
 import { IUserLogin, IUserRegister } from "../types/user";
 import { loginError, loginStart, loginSuccess } from "./UserSlice";
 
-export const Login = async (dipatch: AppDispatch, user: IUserLogin) => {
+export const UserLogin = async (dipatch: AppDispatch, user: IUserLogin) => {
     dipatch(loginStart());
 
     publicRequest.post("/auth/login", user)
