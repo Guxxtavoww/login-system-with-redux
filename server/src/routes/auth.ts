@@ -10,6 +10,13 @@ const users = [
         senha: "909090",
         profilePic: "https://pbs.twimg.com/profile_images/1377408517305405442/cNqTKGEf_400x400.jpg",
         posts: []
+    },
+    {
+        username: "Rodrigin",
+        email: "teste@hotmail.com",
+        senha: "8=>",
+        profilePic: "https://i.picsum.photos/id/225/200/300.jpg?hmac=HoopVmaDuZW8v_8n33eWQvN3hdmFj9gP2m3AWvybT8s",
+        posts: []
     }
 ]
 
