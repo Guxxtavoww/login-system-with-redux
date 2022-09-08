@@ -9,7 +9,7 @@ export const UserLogin = async (dipatch: AppDispatch, user: IUserLogin) => {
 	return await publicRequest
 		.post('/auth/login', user)
 		.then(({ data, request }) => {
-			if(request.status !== 200) {
+			if (request.status !== 200) {
 				dipatch(loginError(request.message));
 
 				return;
@@ -30,7 +30,7 @@ export const UserRegisterAndLogin = async (
 	return await publicRequest
 		.post('/auth/register', user)
 		.then(({ data, request }) => {
-			if(request.status !== 200) {
+			if (request.status !== 200) {
 				dipatch(loginError(request.message));
 
 				return;
