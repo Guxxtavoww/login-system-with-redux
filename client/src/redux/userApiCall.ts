@@ -6,9 +6,14 @@ import { loginError, loginStart, loginSuccess } from './UserSlice';
 export const UserLogin = async (dipatch: AppDispatch, user: IUserLogin) => {
 	dipatch(loginStart());
 
-	publicRequest
+	return await publicRequest
 		.post('/auth/login', user)
-		.then(({ data }) => {
+		.then(({ data, request }) => {
+			if(request.status !== 200) {
+				dipatch(loginError(request.message));
+
+				return;
+			}
 			dipatch(loginSuccess(data));
 		})
 		.catch((err) => {
@@ -22,9 +27,14 @@ export const UserRegisterAndLogin = async (
 ) => {
 	dipatch(loginStart());
 
-	publicRequest
+	return await publicRequest
 		.post('/auth/register', user)
-		.then(({ data }) => {
+		.then(({ data, request }) => {
+			if(request.status !== 200) {
+				dipatch(loginError(request.message));
+
+				return;
+			}
 			dipatch(loginSuccess(data));
 		})
 		.catch((err) => {

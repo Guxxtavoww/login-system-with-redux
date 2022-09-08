@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import React, { useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import './Login.scss';
@@ -8,11 +9,17 @@ import { UserLogin } from '../../redux/userApiCall';
 
 const Login: React.FC = () => {
 	const dispatch = useDispatch();
+
+	const navigate = useNavigate();
+
 	const { error, isFetching } = useSelector(
 		(state: RootState) => state.user_redux,
 	);
 
-	const [formData, setFormData] = useState({} as IUserLogin);
+	const [formData, setFormData] = useState<IUserLogin>({
+		email: '',
+		password: '',
+	});
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
@@ -24,6 +31,8 @@ const Login: React.FC = () => {
 		e.preventDefault();
 
 		await UserLogin(dispatch, formData);
+
+		navigate('/');
 	};
 
 	return (
@@ -37,6 +46,7 @@ const Login: React.FC = () => {
 						name="email"
 						id="email"
 						onChange={handleChange}
+						value={formData.email}
 					/>
 				</div>
 				<div className="inputBx">
@@ -47,6 +57,7 @@ const Login: React.FC = () => {
 						name="password"
 						id="password"
 						onChange={handleChange}
+						value={formData.password}
 					/>
 				</div>
 				<button type="submit" disabled={isFetching}>
