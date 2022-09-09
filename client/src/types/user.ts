@@ -1,5 +1,3 @@
-import { IPost } from './post';
-
 export interface IUserState {
   currentUser: IUser | null;
   isFetching: boolean;
