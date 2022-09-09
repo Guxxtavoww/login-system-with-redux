@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import './Register.scss';
-import { IUserRegister } from '../../types/user';
+import { IUserData } from '../../types/user';
 import { RootState } from '../../redux/store';
-import { UserRegisterAndLogin } from '../../redux/userApiCall';
+import { UserLogin } from '../../redux/userApiCall';
 
 const Register: React.FC = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const Register: React.FC = () => {
     (state: RootState) => state.user_redux,
   );
 
-  const [formData, setFormData] = useState<IUserRegister>({
+  const [formData, setFormData] = useState<IUserData>({
     email: '',
     password: '',
     username: '',
@@ -33,7 +33,7 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    await UserRegisterAndLogin(dispatch, formData);
+    await UserLogin(dispatch, formData, true);
 
     navigate('/');
   };

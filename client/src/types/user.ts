@@ -10,13 +10,8 @@ export interface IUser {
   profilePic?: string;
 }
 
-export interface IUserLogin {
+export interface IUserData {
   email: string;
   password: string;
-}
-
-export interface IUserRegister {
-  email: string;
-  password: string;
-  username: string;
+  username?: string;
 }

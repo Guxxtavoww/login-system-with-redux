@@ -1,39 +1,19 @@
 import { AppDispatch } from './store';
 import { publicRequest } from '../api';
-import { IUserLogin, IUserRegister } from '../types/user';
+import { IUserData } from '../types/user';
 import { loginError, loginStart, loginSuccess } from './UserSlice';
 
-export const UserLogin = async (dipatch: AppDispatch, user: IUserLogin) => {
+export const UserLogin = async (dipatch: AppDispatch, user: IUserData, isRegister: boolean) => {
   dipatch(loginStart());
 
   return await publicRequest
-    .post('/auth/login', user)
+    .post(`${!isRegister ? '/auth/login' : '/auth/register'}`, user)
     .then(({ data, request }) => {
       if (request.status !== 200) {
         const error = String(request.message);
         dipatch(loginError(error));
 
         return error;
-      }
-      dipatch(loginSuccess(data));
-    })
-    .catch((err) => {
-      dipatch(loginError(String(err.message)));
-    });
-};
-
-export const UserRegisterAndLogin = async (
-  dipatch: AppDispatch,
-  user: IUserRegister,
-) => {
-  return await publicRequest
-    .post('/auth/register', user)
-    .then(({ data, request }) => {
-      dipatch(loginStart());
-      if (request.status !== 200) {
-        dipatch(loginError(request.message));
-
-        return;
       }
       dipatch(loginSuccess(data));
     })
