@@ -10,7 +10,6 @@ export interface IUser {
   username: string;
   email: string;
   profilePic?: string;
-  posts?: IPost[];
 }
 
 export interface IUserLogin {
