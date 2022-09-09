@@ -1,5 +1,42 @@
+.loginWrapper {
+  width: 100%;
+  min-height: calc(100vh - 75px);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  button {
+    flex: 1;
+    padding: 5px;
+    background: #0d0d0d;
+    color: #fff;
+    border-radius: 5px;
+    &:disabled {
+      cursor: not-allowed;
+    }    
+  }
+}
+
 .inputBx {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   gap: 5px;
+  label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 5px;
+  }
+  input {
+    padding: 8px;
+    border: 1px solid #0d0d0d33;
+    border-radius: 5px;
+    background: transparent;
+    &:focus {
+      border: 1px solid #0d0d0d77;
+    }
+  }
 }

@@ -36,8 +36,8 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="loginWrapper">
-      <form onSubmit={handleSubmit}>
+    <div className="loginWrapper app_flex">
+      <form onSubmit={handleSubmit} className="form">
         <div className="inputBx">
           <label htmlFor="email">Email</label>
           <input

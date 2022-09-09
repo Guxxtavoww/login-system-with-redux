@@ -10,9 +10,10 @@ export const UserLogin = async (dipatch: AppDispatch, user: IUserLogin) => {
     .post('/auth/login', user)
     .then(({ data, request }) => {
       if (request.status !== 200) {
-        dipatch(loginError(String(request.message)));
+        const error = String(request.message);
+        dipatch(loginError(error));
 
-        return;
+        return error;
       }
       dipatch(loginSuccess(data));
     })
