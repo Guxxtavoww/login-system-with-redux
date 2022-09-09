@@ -3,7 +3,11 @@ import { publicRequest } from '../api';
 import { IUserData } from '../types/user';
 import { loginError, loginStart, loginSuccess } from './UserSlice';
 
-export const UserLogin = async (dipatch: AppDispatch, user: IUserData, isRegister: boolean) => {
+export const UserLogin = async (
+  dipatch: AppDispatch,
+  user: IUserData,
+  isRegister: boolean,
+) => {
   dipatch(loginStart());
 
   return await publicRequest
