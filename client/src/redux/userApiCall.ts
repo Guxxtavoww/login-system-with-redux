@@ -26,11 +26,10 @@ export const UserRegisterAndLogin = async (
   dipatch: AppDispatch,
   user: IUserRegister,
 ) => {
-  dipatch(loginStart());
-
   return await publicRequest
     .post('/auth/register', user)
     .then(({ data, request }) => {
+      dipatch(loginStart());
       if (request.status !== 200) {
         dipatch(loginError(request.message));
 
