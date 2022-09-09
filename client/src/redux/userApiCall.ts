@@ -10,14 +10,13 @@ export const UserLogin = async (
 ) => {
   dipatch(loginStart());
 
-  return await publicRequest
+  return publicRequest
     .post(`${!isRegister ? '/auth/login' : '/auth/register'}`, user)
     .then(({ data, request }) => {
       if (request.status !== 200) {
         const error = String(request.message);
-        dipatch(loginError(error));
 
-        return error;
+        dipatch(loginError(error));
       }
       dipatch(loginSuccess(data));
     })
