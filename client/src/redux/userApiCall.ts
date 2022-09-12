@@ -17,6 +17,8 @@ export const UserLogin = async (
         const error = String(request.message);
 
         dipatch(loginError(error));
+
+        return;
       }
       dipatch(loginSuccess(data));
     })
