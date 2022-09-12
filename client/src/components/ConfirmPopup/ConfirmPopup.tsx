@@ -16,6 +16,8 @@ const ConfirmPopup: React.FC<IConfirmPopupProps> = ({
   onClick,
   setOpen,
 }) => {
+  const handleClose = () => setOpen(false);
+
   return (
     <motion.div
       transition={{ duration: 0.22 }}
@@ -24,7 +26,7 @@ const ConfirmPopup: React.FC<IConfirmPopupProps> = ({
       exit={{ opacity: 0, scale: 0 }}
       className="popup-container app_flex"
     >
-      <button onClick={() => setOpen(false)} className="closeBtn">
+      <button onClick={handleClose} className="closeBtn">
         &times;
       </button>
       <div className="popup_wrapper">
@@ -34,7 +36,7 @@ const ConfirmPopup: React.FC<IConfirmPopupProps> = ({
             <p>{description}</p>
           </div>
           <div className="btnBx">
-            <button onClick={() => setOpen(false)}>Cancelar</button>
+            <button onClick={handleClose}>Cancelar</button>
             <button onClick={onClick}>Confirmar</button>
           </div>
         </div>
